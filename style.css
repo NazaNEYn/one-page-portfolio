@@ -1,0 +1,440 @@
+/* ******************* Components ***************** */
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ******************************* */
+
+
+/* Global elements */
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: lato;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ************************* */
+
+
+/* black and green background */
+
+.background {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100vh;
+    background: #161724;
+}
+
+.green-shape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(0 84%, 100% 40%, 100% 100%, 0% 100%);
+    background: #64ed85;
+}
+
+
+/* ******************************** */
+
+.big-box-text {
+    /* position: relative; */
+    width: 65%;
+    height: 75vh;
+    left: 50%;
+    background: white;
+    z-index: 3;
+    border-radius: 2rem;
+}
+
+.small-box-text {
+    position: absolute;
+    width: 80%;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: solid red 2px; */
+}
+
+.small-box-text {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+/* your name */
+
+.name {
+    font-size: 6.5rem;
+    margin-top: 1.5rem;
+}
+
+
+/* green line under the name */
+
+.name::after {
+    content: "";
+    display: block;
+    border-bottom: solid #64ed85 .5rem;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+/* job title */
+
+.job {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    /* padding: 2rem 0; */
+    /* border: solid red 2px; */
+}
+
+.avatar-details {
+    /* border: solid red 2px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 6.5rem;
+}
+
+.text {
+    width: 50%;
+    /* border: solid green 2px; */
+}
+
+.avatar {
+    max-width: 15rem;
+}
+
+
+/* about me text */
+
+.details {
+    width: 80%;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+
+
+/* ******************************** */
+
+
+/* Social Medias */
+
+.slide {
+    position: relative;
+}
+
+.box {
+    position: fixed;
+    left: -17rem;
+    /* border: solid red 2px; */
+    display: inline-flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.small-box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25rem;
+    height: 8rem;
+    border-radius: 20% 20% /80% 80%;
+    background: #dedfdf76;
+    padding: 1.2rem;
+    /* border: solid red 5px; */
+}
+
+.small-box a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    text-decoration: none;
+    border-radius: 50%;
+    background: #161724;
+    padding: 3rem;
+}
+
+.small-box p {
+    color: white;
+    font-size: 2.4rem;
+    padding-right: 1rem;
+}
+
+i {
+    font-size: 4.2rem;
+    color: #fff;
+}
+
+
+/* social media on hover */
+
+.small-box:hover {
+    transition: all .4s;
+}
+
+@media only screen and (min-width: 767px) {
+    .small-box:hover {
+        animation: slide .7s forwards;
+        backdrop-filter: blur(10px);
+        background: rgba(128, 128, 128, 0.803);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .small-box:hover {
+        transform: scale(1.2);
+    }
+}
+
+.small-box:hover .twitter {
+    color: #33abdf;
+    transition: all .5s;
+}
+
+.small-box:hover .instagram {
+    background: linear-gradient(200deg, #515bd4 15%, #8134af 40%, #dd2a7b 60%, #f58529 80%, #feda77 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s;
+}
+
+.small-box:hover .youtube {
+    color: #f70000;
+    transition: all .5s;
+}
+
+
+/* ********************************* */
+
+
+/* small phones : from 0 to 480px */
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 40%;
+    }
+    .center {
+        top: 42%;
+    }
+    .green-shape {
+        clip-path: polygon(0 74%, 100% 50%, 100% 100%, 0% 100%);
+    }
+    /* big box text */
+    .big-box-text {
+        left: 50%;
+    }
+    .small-box-text {
+        /* border: solid red 2px; */
+        max-height: 80vh;
+    }
+    .avatar-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        /* justify-content: space-evenly; */
+        /* border: solid blue 2px; */
+        max-height: 50vh;
+        /* max-height: 5rem; */
+        /* margin-top: 8rem; */
+    }
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* border: solid green 2px; */
+        margin-top: 3rem;
+        /* max-height: 50rem; */
+        width: 85%;
+    }
+    .details {
+        font-size: 2rem;
+    }
+    /* social media */
+    .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box {
+        position: fixed;
+        left: 3rem;
+        bottom: 5rem;
+        width: 90%;
+        min-height: 10vh;
+        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: #161724;
+        border-radius: 2rem;
+    }
+    .small-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+        height: auto;
+        background: transparent;
+    }
+    .small-box p {
+        display: none;
+    }
+    .small-box a {
+        position: absolute;
+        background: white;
+        padding: 4.1rem;
+    }
+    i {
+        color: #161724;
+        font-size: 6rem;
+    }
+}
+
+
+/* ************************** */
+
+
+/* Animation */
+
+@keyframes slide {
+    0% {
+        transform: translateX(11rem);
+    }
+    75% {
+        transform: translateX(9rem);
+    }
+    100% {
+        transform: translateX(11rem);
+    }
+}
+
+
+/* ****************************** */
+
+
+/* 
+
+
+.box {
+    position: fixed;
+    left: -19rem;
+    top: 0;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 5s;
+}
+
+.small-box {
+    position: relative;
+    width: 30rem;
+    border-radius: 25% 25% /80% 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background: #dedfdf16;
+    margin: .8rem;
+    padding: 1rem;
+    transition: all .8s;
+}
+
+p {
+    margin-right: 2rem;
+    font-size: 2rem;
+}
+
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.8rem;
+    height: 7.8rem;
+    text-decoration: none;
+    background: #efefef;
+    box-shadow: inset 5px 5px 10px #a0a1a1, inset -5px -5px 10px #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.small-box:hover {
+    animation: slide .7s forwards;
+    backdrop-filter: blur(10px);
+    background: rgba(128, 128, 128, 0.803);
+}
+
+.small-box:hover p {
+    color: white;
+}
+
+.small-box:hover .twitter {
+    color: #33abdf;
+}
+
+.small-box:hover .instagram {
+    background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all .5s;
+}
+
+.small-box:hover .youtube {
+    color: #f70000;
+    transition: all .5s;
+}
+
+ */
+
+
+/* ********************** */
+
+.gradient {
+    background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.i {
+    background: linear-gradient(200deg, #515bd4 15%, #8134af 40%, #dd2a7b 60%, #f58529 80%, #feda77 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
