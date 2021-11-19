@@ -1,4 +1,7 @@
 # one-page-portfolio
 
-It's not 100% finished yet <br>
-There are some touch ups left
+It's a one-page portfolio template <br>
+Nothing fancy, no scolling , just one page lol <br>
+
+## You can check out the live preiew [HERE](https://nazaneyn.github.io/one-page-portfolio/) <br>
+
