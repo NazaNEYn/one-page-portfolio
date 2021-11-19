@@ -89,6 +89,8 @@ body {
 .name {
     font-size: 5rem;
     margin-top: 1.5rem;
+    /* name animation */
+    animation: name .8s ease-in-out 1 backwards;
 }
 
 
@@ -382,6 +384,23 @@ i {
     }
     100% {
         transform: translateX(11rem);
+    }
+}
+
+
+/* animation for name text box */
+
+@keyframes name {
+    0% {
+        transform: translateY(0rem);
+        opacity: 0;
+    }
+    75% {
+        transform: translateY(.5rem);
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 100%;
     }
 }
 
