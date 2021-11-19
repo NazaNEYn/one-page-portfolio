@@ -87,7 +87,7 @@ body {
 /* your name */
 
 .name {
-    font-size: 6.5rem;
+    font-size: 5rem;
     margin-top: 1.5rem;
 }
 
@@ -358,10 +358,12 @@ i {
         min-height: 6vh;
     }
     .name {
-        margin-bottom: 5rem;
+        margin: 8rem 0;
+        /* border: solid red 2px; */
     }
     .avatar-details {
-        height: 100%;
+        height: 60%;
+        /* border: solid red 2px; */
     }
 }
 
