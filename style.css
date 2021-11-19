@@ -35,7 +35,7 @@ body {
 /* ************************* */
 
 
-/* black and green background */
+/* black and blue background */
 
 .background {
     position: fixed;
@@ -50,14 +50,16 @@ body {
     width: 100%;
     height: 100vh;
     clip-path: polygon(0 84%, 100% 40%, 100% 100%, 0% 100%);
-    background: #64ed85;
+    background: #10c8cc;
 }
 
 
 /* ******************************** */
 
+
+/* the big white box */
+
 .big-box-text {
-    /* position: relative; */
     width: 65%;
     height: 75vh;
     left: 50%;
@@ -67,19 +69,17 @@ body {
 }
 
 .small-box-text {
+    /* positioning the *content* of white box */
     position: absolute;
     width: 80%;
-    height: 60vh;
+    height: 70vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* border: solid red 2px; */
-}
-
-.small-box-text {
+    /* centering the content */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -92,12 +92,12 @@ body {
 }
 
 
-/* green line under the name */
+/* blue line under the name */
 
 .name::after {
     content: "";
     display: block;
-    border-bottom: solid #64ed85 .5rem;
+    border-bottom: solid #10c8cc .5rem;
     width: 60%;
     margin: 0 auto;
 }
@@ -106,14 +106,13 @@ body {
 /* job title */
 
 .job {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin-bottom: 2.5rem;
-    /* padding: 2rem 0; */
     /* border: solid red 2px; */
 }
 
 .avatar-details {
-    /* border: solid red 2px; */
+    /* border: solid blue 2px; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -143,7 +142,7 @@ body {
 /* ******************************** */
 
 
-/* Social Medias */
+/* Slid-in social Medias */
 
 .slide {
     position: relative;
@@ -151,11 +150,11 @@ body {
 
 .box {
     position: fixed;
+    min-height: 100vh;
     left: -17rem;
     /* border: solid red 2px; */
     display: inline-flex;
     flex-direction: column;
-    min-height: 100vh;
     justify-content: space-around;
     align-items: center;
 }
@@ -239,11 +238,35 @@ i {
 /* ********************************* */
 
 
-/* small phones : from 0 to 480px */
+/* media queries */
+
+
+/* big tablet to 1200px(widths smaller than 1140 row */
+
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 65%;
+    }
+}
+
+
+/* small tablet to big tablet : from 768px to 1023px */
+
+@media only screen and (max-width: 1023px) {
+    html {
+        font-size: 59%;
+    }
+    .big-box-text {
+        left: 56%;
+    }
+}
+
+
+/* small phone to small tablet : from 481px to 767px */
 
 @media only screen and (max-width: 767px) {
     html {
-        font-size: 40%;
+        font-size: 38%;
     }
     .center {
         top: 42%;
@@ -263,12 +286,9 @@ i {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 4rem;
-        /* justify-content: space-evenly; */
+        margin-top: 8rem;
         /* border: solid blue 2px; */
         max-height: 50vh;
-        /* max-height: 5rem; */
-        /* margin-top: 8rem; */
     }
     .text {
         display: flex;
@@ -277,7 +297,6 @@ i {
         justify-content: center;
         /* border: solid green 2px; */
         margin-top: 3rem;
-        /* max-height: 50rem; */
         width: 85%;
     }
     .details {
@@ -291,10 +310,12 @@ i {
     }
     .box {
         position: fixed;
-        left: 3rem;
+        /* centering the black social media box */
+        left: 50%;
+        transform: translateX(-50%);
         bottom: 5rem;
-        width: 90%;
-        min-height: 10vh;
+        width: 80%;
+        min-height: 9vh;
         display: inline-block;
         display: flex;
         flex-direction: row;
@@ -327,10 +348,28 @@ i {
 }
 
 
+/* small phones : from 0 to 480px */
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 23%;
+    }
+    .box {
+        min-height: 6vh;
+    }
+    .name {
+        margin-bottom: 5rem;
+    }
+    .avatar-details {
+        height: 100%;
+    }
+}
+
+
 /* ************************** */
 
 
-/* Animation */
+/* slide snimation in big screen */
 
 @keyframes slide {
     0% {
@@ -346,95 +385,3 @@ i {
 
 
 /* ****************************** */
-
-
-/* 
-
-
-.box {
-    position: fixed;
-    left: -19rem;
-    top: 0;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 5s;
-}
-
-.small-box {
-    position: relative;
-    width: 30rem;
-    border-radius: 25% 25% /80% 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    background: #dedfdf16;
-    margin: .8rem;
-    padding: 1rem;
-    transition: all .8s;
-}
-
-p {
-    margin-right: 2rem;
-    font-size: 2rem;
-}
-
-
-a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 7.8rem;
-    height: 7.8rem;
-    text-decoration: none;
-    background: #efefef;
-    box-shadow: inset 5px 5px 10px #a0a1a1, inset -5px -5px 10px #ffffff;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.small-box:hover {
-    animation: slide .7s forwards;
-    backdrop-filter: blur(10px);
-    background: rgba(128, 128, 128, 0.803);
-}
-
-.small-box:hover p {
-    color: white;
-}
-
-.small-box:hover .twitter {
-    color: #33abdf;
-}
-
-.small-box:hover .instagram {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all .5s;
-}
-
-.small-box:hover .youtube {
-    color: #f70000;
-    transition: all .5s;
-}
-
- */
-
-
-/* ********************** */
-
-.gradient {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.i {
-    background: linear-gradient(200deg, #515bd4 15%, #8134af 40%, #dd2a7b 60%, #f58529 80%, #feda77 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
