@@ -6,3 +6,5 @@ Made it with html and pure css, no scolling , just one page  <br>
 
 ## You can check out the live preiew [HERE](https://nazaneyn.github.io/one-page-portfolio/) <br>
 
+PS. I need to fix the responsive design issue . will do it as soon as possible 
+
